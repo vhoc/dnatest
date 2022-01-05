@@ -19,5 +19,11 @@
   "bugs": {
     "url": "https://github.com/vhoc/dnatest/issues"
   },
-  "homepage": "https://github.com/vhoc/dnatest#readme"
+  "homepage": "https://github.com/vhoc/dnatest#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.17.2"
+  }
 }
