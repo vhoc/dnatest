@@ -1,7 +1,6 @@
-POST http://localhost:3001/dnatest/
+POST http://localhost:3001/mutation/
 Content-Type: application/json
 
 {
-    "name" : "test",
-    "other" : "otter"
+    "dna" : ["ATGCGA","GAGTGC","AAAATT","AGAAGG","CTCCTA","TCACTG"]
 }
