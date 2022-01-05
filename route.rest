@@ -1,0 +1,7 @@
+POST http://localhost:3001/dnatest/
+Content-Type: application/json
+
+{
+    "name" : "test",
+    "other" : "otter"
+}
