@@ -4,3 +4,7 @@ Content-Type: application/json
 {
     "dna" : ["ATGCGA","GAGTGC","AAAATT","AGAAGG","CTCCTA","TCACTG"]
 }
+
+###
+
+GET http://localhost:3001/stats/

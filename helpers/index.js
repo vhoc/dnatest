@@ -1,3 +1,5 @@
+const Dna = require('../models/Dna');
+
 const hasRepetition = (string) => {
     let count = 0;
     const patterns = ["AAAA", "TTTT", "GGGG", "CCCC"];
@@ -79,15 +81,20 @@ const repeatedVertical = (dnaArray) => {
     return repeatedCount
 }
 
-const hasMutation = (dnaArray) => {
+const hasMutation = async (dnaArray) => {
+
+    // PENDIENTE: Validar T,G,C,A solamente.
+    const dna = new Dna({
+        sequence: dnaArray.toString(),
+    });
+
+    try {
+        const newDna = await dna.save();
+    } catch ( err ) {
+        console.error(err.message)
+    }
 
     const repetitions = repeatedHorizontal(dnaArray) + repeatedVertical(dnaArray) + repeatedDiagonal(dnaArray)
-
-    /*
-    return {
-        "repetitions": repetitions,
-        "result": repetitions >= 2 ? "mutated" : "non-mutated",
-    }*/
 
     if ( repetitions >= 2 ) {
         return true;
