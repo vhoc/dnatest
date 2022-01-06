@@ -54,10 +54,6 @@ router.get('/stats', async (req, res) => {
     const countMutations = mutationValues.filter(x => x === 1).length;
     const countNonMutations = mutationValues.filter(x => x === 0).length;
 
-    console.log(ratio);
-    console.log(countMutations);
-    console.log(countNonMutations);
-
     res.status(200).json({
         count_mutations: countMutations,
         count_no_mutation: countNonMutations,
