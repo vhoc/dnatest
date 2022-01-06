@@ -85,7 +85,7 @@ const validateEntry = async (dnaArray) => {
 
   const pattern = /[^ATGC]+/g;
 
-  let plainString = obtainedArray.join();
+  let plainString = dnaArray.join();
   console.log("plainString: " + plainString);
 
   let cleanedUp = plainString.replace(/\,/g,'');
