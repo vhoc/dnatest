@@ -84,7 +84,12 @@ const validateEntry = async (dnaArray) => {
   console.log(await dnaArray);
 
   const pattern = /[^ATGC]+/g;
-  let plainString = dnaArray.join().replaceAll(',','');
+
+  let plainString = dnaArray.join();
+  console.log(plainString);
+
+  let cleanedUp = plainString.replaceAll(',','');
+  console.log(cleanedUp);
 
   const check = pattern.test(plainString);
 
