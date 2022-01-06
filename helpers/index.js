@@ -81,15 +81,15 @@ const repeatedVertical = (dnaArray) => {
 
 const validateEntry = async (dnaArray) => {
 
-  console.log("validateEntry dnaArray: " + dnaArray);
+  //console.log("validateEntry dnaArray: " + dnaArray);
 
   const pattern = /[^ATGC]+/g;
 
   let plainString = dnaArray.join();
-  console.log("plainString: " + plainString);
+  //console.log("plainString: " + plainString);
 
   let cleanedUp = plainString.replace(/\,/g,'');
-  console.log("cleanedUp: " + cleanedUp);
+  //console.log("cleanedUp: " + cleanedUp);
 
   const check = pattern.test(cleanedUp);
 
