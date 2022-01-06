@@ -41,9 +41,9 @@ router.get('/dna', async (req, res) => {
 // Stats
 router.get('/stats', async (req, res) => {
 
-    const stats = await Dna.find().select('mutation');
+    const mutations = await Dna.find().select('mutation -_id');
 
-    res.status(200).json(stats);
+    res.status(200).json(mutations);
 
 })
 
