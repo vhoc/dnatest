@@ -81,39 +81,12 @@ const repeatedVertical = (dnaArray) => {
 
 const validateEntry = async (dnaArray) => {
 
-    const pattern = /[T*C*G*A*]/gm;
-    let plainString = dnaArray.join().replaceAll(',','');
+  const pattern = /[^ATGC]+/g;
+  let plainString = dnaArray.join().replaceAll(',','');
 
-    const check = pattern.test(plainString);
+  const check = pattern.test(plainString);
 
-    return check ? true : false;
-    //plainString = plainString.replace(',','');
-    //console.log(plainString);
-    /*
-    console.log(pattern.test(plainString))
-    if ( ! pattern.test( plainString ) ) {
-        return false;
-    }
-
-    return true;*/
-
-    
-
-    return true;
-
-    // Validate base pairs
-    /*
-    dnaArray.forEach( async (element) => {
-
-        for ( let i = 0; i < await element.length; i++ ) {
-            console.log(`${await element.charAt(i)} is ${pattern.test(await element.charAt(i))}`);
-            if ( pattern.test(await element.charAt(i) === false ) ) {
-                return false;
-            } else {
-                return true;
-            }
-        }
-    });*/
+  return check ? false : true;
 
 }
 

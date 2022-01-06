@@ -2,7 +2,7 @@ POST http://localhost:3001/mutation/
 Content-Type: application/json
 
 {
-    "dna" : ["ATGCGA","GAGTGC","AGOTGT","AGTAGG","CCCCTA","TCACTG"]
+    "dna" : ["ATGCGA","GAGTGC","AGCTGT","AGTAGG","CTGCTA","TCCGTC"]
 }
 
 ###

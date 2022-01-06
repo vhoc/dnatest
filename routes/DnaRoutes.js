@@ -3,15 +3,13 @@ const router = express.Router()
 const helpers = require('../helpers/index');
 const Dna = require('../models/Dna');
 
-// Execute DNA Test
 router.post('/mutation', async (req, res) => {
 
     let array = req.body.dna
 
     const validation = await helpers.validateEntry(array)
-    console.log( validation );
+
     const check = await helpers.hasMutation(array)
-    console.log( check )
 
     if ( !validation ) {
         res.status(422).json({ result: "invalid input" })
@@ -25,13 +23,9 @@ router.post('/mutation', async (req, res) => {
         }   
     }
 
-    
-
-    
-
 });
 
-// Stats
+// DNA records list
 router.get('/dna', async (req, res) => {
 
     try {
@@ -42,6 +36,13 @@ router.get('/dna', async (req, res) => {
     }
 
 });
+
+// Stats
+router.get('/stats', async (req, res) => {
+
+    
+
+})
 
 
 module.exports = router
