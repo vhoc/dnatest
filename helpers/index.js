@@ -1,16 +1,32 @@
 const Dna = require("../models/Dna");
 
+/**
+ * Returns the number of times an acid base repeats at least 4 times.
+ * 
+ * @param {string} string Input string to validate.
+ * @returns {number} Repetition count.
+ */
 const hasRepetition = (string) => {
   let count = 0;
   const patterns = ["AAAA", "TTTT", "GGGG", "CCCC"];
+
   patterns.forEach((element) => {
     if (string.includes(element) === true) {
       count++;
     }
   });
+
   return count;
 };
 
+/**
+ * Returns the number of times a repetition was found
+ * checking diagonally.
+ * 
+ * @param {Array} dnaArray 
+ * @param {Function} bottomToTop 
+ * @returns {number} Repetition count.
+ */
 const repeatedDiagonal = (dnaArray, bottomToTop) => {
   var Ylength = dnaArray.length;
   var Xlength = dnaArray[0].length;
@@ -41,6 +57,13 @@ const repeatedDiagonal = (dnaArray, bottomToTop) => {
   return repeatedCount;
 };
 
+/**
+ * Returns the number of times a repetition was found
+ * checking horizontally.
+ * 
+ * @param {Array} dnaArray 
+ * @returns {number} Repetiton count.
+ */
 const repeatedHorizontal = (dnaArray) => {
   let repeatedCount = 0;
 
@@ -54,11 +77,18 @@ const repeatedHorizontal = (dnaArray) => {
   return repeatedCount;
 };
 
+/**
+ * Returns the number of times a repetition was found
+ * checking vertically.
+ * @param {Array} dnaArray 
+ * @returns {number} Repetition count.
+ */
 const repeatedVertical = (dnaArray) => {
   let repeatedCount = 0;
   let transposed = [];
   let joined = [];
 
+  // Transposing the matrix (rows for columns and viceversa).
   for (let i = 0; i < dnaArray.length; i++) {
     transposed.push([]);
     for (let j = 0; j < dnaArray.length; j++) {
@@ -79,28 +109,31 @@ const repeatedVertical = (dnaArray) => {
   return repeatedCount;
 };
 
+/**
+ * Returns true or false if the input has valid acid base letters
+ * 
+ * @param {Array} dnaArray 
+ * @returns {boolean} Validation status
+ */
 const validateEntry = async (dnaArray) => {
-
-  //console.log("validateEntry dnaArray: " + dnaArray);
-
   const pattern = /[^ATGC]+/g;
-
   let plainString = dnaArray.join();
-  //console.log("plainString: " + plainString);
-
   let cleanedUp = plainString.replace(/\,/g,'');
-  //console.log("cleanedUp: " + cleanedUp);
-
   const check = pattern.test(cleanedUp);
-
   return check ? false : true;
-
 }
 
+/**
+ * Returns true or false if the input sequence
+ * triggers 2 or more mutations checks.
+ * 
+ * @param {Array} dnaArray 
+ * @returns {boolean} Mutation status.
+ */
 const hasMutation = async (dnaArray) => {
-  // PENDIENTE: Validar T,G,C,A solamente.
   let mutationBool = false;
 
+  // Run all the validations.
   const repetitions =
     repeatedHorizontal(dnaArray) +
     repeatedVertical(dnaArray) +
@@ -111,6 +144,13 @@ const hasMutation = async (dnaArray) => {
   return mutationBool;
 };
 
+/**
+ * Stores the dna sequence record into the database
+ * whether it has a mutation or not.
+ * 
+ * @param {array} dnaArray 
+ * @param {number} mutation status: 1 or 0.
+ */
 const storeDna = async (dnaArray, mutation) => {
     const dna = new Dna({
         sequence: dnaArray.toString(),
