@@ -42,13 +42,13 @@ router.get('/dna', async (req, res) => {
 router.get('/stats', async (req, res) => {
 
     const mutations = await Dna.find().select('mutation -_id');
-    let flatmutations = mutations.flat();
-/*
-    mutations.forEach(value => {
-        mutationValues.push(value);
-    })*/
+    //let flatmutations = mutations.flat();
 
-    console.log(flatmutations);
+    mutations.forEach(value => {
+        mutationValues.push(value[1]);
+    })
+
+    //console.log(flatmutations);
 
     res.status(200).json(mutations);
 
