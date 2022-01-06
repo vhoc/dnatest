@@ -10,11 +10,15 @@ User can validate a "DNA sequence" for "mutations" by sending a POST request wit
 }
 ```
   
-Statistics Endpoint:
+Statistics Endpoint:  
 [GET] http://victorolvera.net:3000/stats/
 
-Mutations statistics can be queried by sending a GET request to this endpoint.  
+The following statistics can be requested by sending a GET request to this endpoint.  
 - Mutations count
 - Non mutations count
 - Ratio of mutations within the records.
 
+Records Endpoint:  
+[GET] http://victorolvera.net:3000/dna/  
+  
+All records can be accessed through this endpoint. It was a debug tool that I decided to just leave there.
