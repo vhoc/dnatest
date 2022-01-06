@@ -40,7 +40,7 @@ router.get('/dna', async (req, res) => {
 // Stats
 router.get('/stats', async (req, res) => {
 
-    
+    res.status(200).json({ message: "I exist." });
 
 })
 
