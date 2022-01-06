@@ -41,7 +41,9 @@ router.get('/dna', async (req, res) => {
 // Stats
 router.get('/stats', async (req, res) => {
 
-    res.status(200).json({ message: "I exist." });
+    const stats = await Dna.find().select('mutation');
+
+    res.status(200).json(stats);
 
 })
 
