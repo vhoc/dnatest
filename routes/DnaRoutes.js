@@ -50,7 +50,7 @@ router.get('/stats', async (req, res) => {
 
     //console.log(flatmutations);
 
-    res.status(200).json(mutations);
+    res.status(200).json(mutationValues);
 
 })
 
