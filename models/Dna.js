@@ -4,6 +4,9 @@ const Schema = mongoose.Schema;
 const DnaSchema = new Schema({
   sequence: {
     type: String,
+  },
+  mutation: {
+    type: Number,
   }
 });
 
