@@ -42,8 +42,9 @@ router.get('/dna', async (req, res) => {
 router.get('/stats', async (req, res) => {
 
     const mutations = await Dna.find().select('mutation -_id');
+    const reduced = await mutations.reduce()
 
-    res.status(200).json(mutations);
+    res.status(200).json(reduced);
 
 })
 
