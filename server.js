@@ -9,4 +9,4 @@ app.use(express.json());
 const dnaTestRouter = require('./routes/DnaRoutes')
 app.use('/', dnaTestRouter)
 
-app.listen(80, () => console.log("Service started."));
+app.listen(3000, () => console.log("Service started."));
