@@ -81,6 +81,8 @@ const repeatedVertical = (dnaArray) => {
 
 const validateEntry = async (dnaArray) => {
 
+  console.log(await dnaArray);
+
   const pattern = /[^ATGC]+/g;
   let plainString = dnaArray.join().replaceAll(',','');
 
