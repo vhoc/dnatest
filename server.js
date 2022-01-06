@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const vhost = require("vhost");
 
 const mongoose = require('mongoose');
 mongoose.connect('mongodb://localhost/dnatest', { useNewUrlParser: true });
