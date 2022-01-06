@@ -83,7 +83,7 @@ const validateEntry = async (dnaArray) => {
 
   const obtainedArray = dnaArray;
 
-  console.log("validateEntry dnaArray: " + await dnaArray);
+  console.log("validateEntry dnaArray: " + await obtainedArray);
 
   const pattern = /[^ATGC]+/g;
 
