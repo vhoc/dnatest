@@ -1,12 +1,12 @@
-const express = require("express");
-const app = express();
+const express = require('express')
+const app = express()
 
-const mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/dnatest', { useNewUrlParser: true });
+const mongoose = require('mongoose')
+mongoose.connect('mongodb://localhost/dnatest', { useNewUrlParser: true })
 
-app.use(express.json());
+app.use(express.json())
 
 const dnaTestRouter = require('./routes/DnaRoutes')
 app.use('/', dnaTestRouter)
 
-app.listen(3000, () => console.log("Service started."));
+app.listen(3000, () => console.log('Service started.'))
