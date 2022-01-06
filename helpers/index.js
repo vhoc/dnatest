@@ -87,10 +87,10 @@ const validateEntry = async (dnaArray) => {
 
   const pattern = /[^ATGC]+/g;
 
-  let plainString = await obtainedArray.join().toString();
+  let plainString = await obtainedArray.join();
   console.log("plainString: " + await plainString);
 
-  let cleanedUp = await plainString.replaceAll(',','');
+  let cleanedUp = await plainString.replace(/\,/g,'');
   console.log("cleanedUp: " + await cleanedUp);
 
   const check = pattern.test(plainString);
