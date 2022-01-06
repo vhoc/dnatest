@@ -7,9 +7,9 @@ const router = express.Router()
 router.post('/mutation', async (req, res) => {
   let array = req.body.dna
 
-  const validation = await helpers.validateEntry(array)
+  const validation = helpers.validateEntry(array)
 
-  const check = await helpers.hasMutation(array)
+  const check = helpers.hasMutation(array)
 
   if (!validation) {
     res.status(422).json({ result: 'invalid input' })

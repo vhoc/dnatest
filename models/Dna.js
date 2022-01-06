@@ -1,5 +1,5 @@
-const mongoose = require("mongoose");
-const Schema = mongoose.Schema;
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
 
 const DnaSchema = new Schema({
   sequence: {
@@ -7,7 +7,7 @@ const DnaSchema = new Schema({
   },
   mutation: {
     type: Number,
-  }
-});
+  },
+})
 
 module.exports = mongoose.model('Dna', DnaSchema)
