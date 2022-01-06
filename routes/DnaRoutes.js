@@ -42,11 +42,16 @@ router.get('/dna', async (req, res) => {
 router.get('/stats', async (req, res) => {
 
     const mutations = await Dna.find().select('mutation -_id');
+
     let mutationValues = [];
 
     mutations.forEach(value => {
         mutationValues.push(value.mutation);
-    })
+    });
+
+    const ratio = mutationValues => mutationValues.reduce((a,b) => a+b,0) / mutationValues.length;
+
+    console.log(ratio);
 
     //console.log(flatmutations);
 
