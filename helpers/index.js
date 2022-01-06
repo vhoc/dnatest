@@ -91,7 +91,7 @@ const validateEntry = async (dnaArray) => {
   let cleanedUp = plainString.replace(/\,/g,'');
   console.log("cleanedUp: " + cleanedUp);
 
-  const check = pattern.test(plainString);
+  const check = pattern.test(cleanedUp);
 
   return check ? false : true;
 
