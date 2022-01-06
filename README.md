@@ -21,4 +21,4 @@ The following statistics can be requested by sending a GET request to this endpo
 Records Endpoint:  
 [GET] http://victorolvera.net:3000/dna/  
   
-All records can be accessed through this endpoint. It was a debug tool that I decided to just leave there.
+All records can be accessed through this endpoint. It was a debug route that I decided it can't do any harm to leave there.
