@@ -1,4 +1,4 @@
-POST http://localhost:3001/mutation/
+POST https://dnatest.victorolvera.net/mutation/
 Content-Type: application/json
 
 {
