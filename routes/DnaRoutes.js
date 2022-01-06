@@ -51,7 +51,7 @@ router.get('/stats', async (req, res) => {
 
     const ratio = mutationValues => mutationValues.reduce((a,b) => a+b,0) / mutationValues.length;
 
-    console.log(ratio);
+    console.log(ratio(mutationValues));
 
     //console.log(flatmutations);
 
