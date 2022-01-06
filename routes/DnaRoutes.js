@@ -49,9 +49,16 @@ router.get('/stats', async (req, res) => {
         mutationValues.push(value.mutation);
     });
 
-    const ratio = mutationValues => mutationValues.reduce((a,b) => a+b,0) / mutationValues.length;
+    const avg = mutationValues => mutationValues.reduce((a,b) => a+b,0) / mutationValues.length;
+    const ratio = Math.round(avg(mutationValues) * 10) / 10;
+    const countMutations = mutationValues.filter(x => x === 1);
+    const countNonMutations = mutationValues.filter(x => x === 0);
 
-    console.log(ratio(mutationValues));
+    console.log(ratio);
+    console.log(countMutations);
+    console.log(countNonMutations);
+
+
 
     //console.log(flatmutations);
 
