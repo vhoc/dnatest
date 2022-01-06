@@ -6,6 +6,7 @@ const Dna = require('../models/Dna');
 router.post('/mutation', async (req, res) => {
 
     let array = req.body.dna
+    console.log(req.body.dna);
 
     const validation = await helpers.validateEntry(array)
 

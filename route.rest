@@ -1,4 +1,4 @@
-POST https://victorolvera.net:3000/mutation/
+POST http://victorolvera.net:3000/mutation/
 Content-Type: application/json
 
 {
