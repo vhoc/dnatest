@@ -45,7 +45,7 @@ router.get('/stats', async (req, res) => {
     let mutationValues = [];
 
     mutations.forEach(value => {
-        mutationValues.push(value[1]);
+        mutationValues.push(value.mutation);
     })
 
     //console.log(flatmutations);
