@@ -51,8 +51,8 @@ router.get('/stats', async (req, res) => {
 
     const avg = mutationValues => mutationValues.reduce((a,b) => a+b,0) / mutationValues.length;
     const ratio = Math.round(avg(mutationValues) * 10) / 10;
-    const countMutations = mutationValues.filter(x => x === 1);
-    const countNonMutations = mutationValues.filter(x => x === 0);
+    const countMutations = mutationValues.filter(x => x === 1).length;
+    const countNonMutations = mutationValues.filter(x => x === 0).length;
 
     console.log(ratio);
     console.log(countMutations);
