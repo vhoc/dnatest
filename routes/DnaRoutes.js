@@ -58,11 +58,11 @@ router.get('/stats', async (req, res) => {
     console.log(countMutations);
     console.log(countNonMutations);
 
-
-
-    //console.log(flatmutations);
-
-    res.status(200).json(mutationValues);
+    res.status(200).json({
+        count_mutations: countMutations,
+        count_no_mutation: countNonMutations,
+        ratio: ratio,
+    });
 
 })
 
