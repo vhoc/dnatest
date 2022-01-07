@@ -31,7 +31,7 @@ router.get('/list', async (req, res) => {
 
     try {
         const dnaRecords = await Dna.find()
-            .sort({ createdAt: -1 })
+            .sort({ createdAt: -1 }).limit(10)
 
         res.status(200).json(dnaRecords)
     } catch (err) {
