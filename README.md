@@ -20,7 +20,5 @@ The following statistics can be requested by sending a GET request to this endpo
 - Non mutations count
 - Ratio of mutations within the records.
 
-Records Endpoint:  
-[GET] http://victorolvera.net:3000/dna/  
-  
-All records can be accessed through this endpoint. It was a debug route that I decided it can't do any harm to leave there.
+List recorded tests Endpoint:  
+[GET] http://victorolvera.net:3000/list/
