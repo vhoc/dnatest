@@ -31,6 +31,9 @@ router.get('/list', async (req, res) => {
 
     try {
         const dnaRecords = await Dna.find()
+            .sort('createdAt')
+            .limit(10)
+            
         res.status(200).json(dnaRecords)
     } catch (err) {
         res.status(500).json({ message: err.message })
