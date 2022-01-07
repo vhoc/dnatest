@@ -9,8 +9,8 @@ const DnaSchema = new Schema({
     type: Number,
   },
   createdAt: {
-    type: String,
-    default: Date.now(),
+    type: Date,
+    default: Date.now().toLocaleString().slice(0, 24),
   }
 });
 
