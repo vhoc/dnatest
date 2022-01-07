@@ -9,7 +9,7 @@ const DnaSchema = new Schema({
     type: Number,
   },
   createdAt: {
-    type: Date,
+    type: String,
     default: Date.now().toLocaleString('es-MX', { timeZone: 'America/Hermosillo' }),
   }
 });
