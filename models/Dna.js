@@ -10,7 +10,7 @@ const DnaSchema = new Schema({
   },
   createdAt: {
     type: String,
-    default: Date.now().toLocaleString().slice(0, 24),
+    default: Date.now(),
   }
 });
 
