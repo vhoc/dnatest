@@ -2,7 +2,7 @@ POST http://victorolvera.net:3000/mutation/
 Content-Type: application/json
 
 {
-    "dna" : ["ATGCGA","GAGTGC","AGTTGT","AGTAGG","CGTCTA","TCCCCC"]
+    "dna" : ["GTGCGA","GAATGC","CGTTGT","AGGAGG","CGTCTA","TCACCC"]
 }
 
 ###
