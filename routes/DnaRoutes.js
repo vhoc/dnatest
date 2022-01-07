@@ -27,7 +27,7 @@ router.post('/mutation', async (req, res) => {
 });
 
 // DNA records list
-router.get('/dna', async (req, res) => {
+router.get('/list', async (req, res) => {
 
     try {
         const dnaRecords = await Dna.find()
