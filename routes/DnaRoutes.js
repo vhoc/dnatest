@@ -40,6 +40,20 @@ router.get('/list', async (req, res) => {
 
 });
 
+// ALL DNA records list
+router.get('/all', async (req, res) => {
+
+    try {
+        const dnaRecords = await Dna.find()
+            .sort({ createdAt: -1 })
+
+        res.status(200).json(dnaRecords)
+    } catch (err) {
+        res.status(500).json({ message: err.message })
+    }
+
+});
+
 // Stats
 router.get('/stats', async (req, res) => {
 
