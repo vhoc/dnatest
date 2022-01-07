@@ -2,9 +2,13 @@ POST http://victorolvera.net:3000/mutation/
 Content-Type: application/json
 
 {
-    "dna" : ["AAGTGC","GACTGC","CGTGGT","ATGAGG","TGTGTA","TCGACA"]
+    "dna" : ["AAGTGC","GAATGC","CGTAGT","ATGAGG","TGTGTT","TCCACA"]
 }
 
 ###
 
 GET http://victorolvera.net:3000/list/
+
+###
+
+GET http://victorolvera.net:3000/all/
