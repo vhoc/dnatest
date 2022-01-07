@@ -1,4 +1,6 @@
-# INSTRUCTIONS
+# DNA Test API  
+
+## Instructions
 
 Validate "DNA Sequence" Endpoint:  
 [POST] http://victorolvera.net:3000/mutation/  
